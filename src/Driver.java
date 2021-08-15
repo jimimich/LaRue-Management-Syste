@@ -34,6 +34,7 @@ public class Driver {
             System.out.println("7: Show Sign-In Sheet");
             System.out.println("8: Show All Employees");
             System.out.println("9: Start a New Sign-In Sheet Day");
+            System.out.println("10: Clear Transaction History");
             System.out.println("0: Quit");
 
             Scanner sc = new Scanner(System.in);
@@ -107,6 +108,21 @@ public class Driver {
                 } catch (IOException e) {
                     System.out.println("Error");
                 }
+            }
+            else if(option == 10){
+
+                FileWriter fwOb = new FileWriter("TransactionHistory.rtf", false); 
+                PrintWriter pwOb = new PrintWriter(fwOb, false);
+                pwOb.flush();
+                pwOb.close();
+                fwOb.close();
+
+                FileWriter fwOb2 = new FileWriter("MoneyList.rtf", false); 
+                PrintWriter pwOb2 = new PrintWriter(fwOb, false);
+                pwOb2.flush();
+                pwOb2.close();
+                fwOb2.close();
+
             }
             else if (option == 0){
                 break;
